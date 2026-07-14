@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RENDERINGZ.IN</title>
+  <link rel="icon" href="images/favicon.ico.png" />
+  <meta name="description" content="A minimalist portfolio template." />
+
+  <!--
+Tooplate 2160 Exhibit Studio
+https://www.tooplate.com/view/2160-exhibit-studio
+Free HTML CSS Template
+-->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Renderingz-style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════════════════════ -->
+  <nav class="site-nav" role="navigation" aria-label="Main">
+
+      <!-- ↓ EDIT: Replace with your name or studio name -->
+
+      
+
+    <div class="nav__bar">
+
+      <a href="index.html" class="logo">
+        <img src="images/logo-2-01.png" alt="Company Logo">
+
+      <a href="index.html" class="nav__wordmark">RENDERINGZ <span>| Architectural visualization</span></a>
+
+      <!-- ↓ EDIT: Desktop links (visible ≥680px) -->
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link--active">works</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Hamburger — visible on mobile only, controlled by JS -->
+      <button
+        class="nav__hamburger"
+        id="js-hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="js-mobile-menu"
+      >
+        <span class="nav__hamburger-line"></span>
+        <span class="nav__hamburger-line"></span>
+        <span class="nav__hamburger-line"></span>
+      </button>
+
+    </div><!-- /nav__bar -->
+
+    <!-- ↓ EDIT: Mobile menu links (visible <680px, toggled by hamburger) -->
+    <ul class="nav__mobile-menu" id="js-mobile-menu" aria-hidden="true">
+      <li><a href="index.html" class="nav__link--active">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════════════════════ -->
+  <header class="site-hero">
+
+        <!-- ↓ EDIT: Your gallery category / series name -->
+    <p class="hero__tag">Renderingz · 2026</p>
+
+    <!-- ↓ EDIT: Your gallery headline -->
+    <h1 class="hero__title">
+      visual <br><strong>Story telling</strong>
+    </h1>
+
+    <div class="hero__meta">
+      <!-- ↓ EDIT: Update the photo count to match your gallery -->
+      <span class="hero__count" id="js-photo-count">24 Renderingz</span>
+      <div class="hero__rule" aria-hidden="true"></div>
+      <!-- ↓ EDIT: A one-line description of your gallery series -->
+      <p class="hero__desc">Stories told through spaces—where light, material, and emotion come together to bring unbuilt architecture to life.</p>
+    </div>
+
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FILTER BAR  (optional — delete this section if not needed)
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="gallery-filter-wrap">
+    <div class="gallery-filter" role="toolbar" aria-label="Filter gallery">
+
+      <!-- ↓ EDIT: Add or remove filter buttons to match your categories.
+                The "All" button shows all items; the others filter by
+                the data-filter attribute on each .gallery__item below. -->
+      <button class="filter__btn is-active" data-filter="all">All</button>
+      <button class="filter__btn" data-filter="Residential">Residential</button>
+      <button class="filter__btn" data-filter="commercial">commercial</button>
+      <button class="filter__btn" data-filter="2D">2D</button>
+      <button class="filter__btn" data-filter="3D">3D</button>
+
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       MASONRY GALLERY
+       ─────────────────────────────────────────────────────────────
+       HOW TO ADD PHOTOS:
+       1. Copy one <div class="gallery__item"> block below.
+       2. Replace the src="..." with your image path.
+       3. Replace data-full="..." with a high-res path for the lightbox.
+       4. Update data-title and data-meta to your caption text.
+       5. Set data-category to one of your filter names (e.g. "Residential").
+       ─────────────────────────────────────────────────────────────
+       NOTE: The CSS column masonry needs images of VARYING heights
+       for the best visual result. Mix Residential & commercial shots.
+       ═══════════════════════════════════════════════════════════════ -->
+  <main class="gallery" id="js-gallery" aria-label="Photo gallery">
+
+
+    <!-- ─── PHOTO 1 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="Residential"
+         data-full="images/BLR_Villa-2_ExC1.png"
+         data-title="Bangalore villa"
+         data-meta="Bangalore, India · 2025">
+
+      <!-- ↓ EDIT: Replace src with your thumbnail image -->
+      <img
+        src="images/BLR_Villa-2_ExC1.png"
+        width="900"
+        height="600"
+        alt="A Residential captured in golden hour light"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Bangalore villa</span>
+        <span class="gallery__caption-meta">Bangalore, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 1 -->
+
+
+    <!-- ─── PHOTO 2 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="Residential"
+         data-full="images/BLR_Villa-2_ExC2.png"
+         data-title="Bangalore villa"
+         data-meta="Bangalore, India · 2025">
+
+      <img
+        src="images/BLR_Villa-2_ExC2.png"
+        width="600"
+        height="400"
+        alt="Coastal mist over a rugged shoreline"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Bangalore villa</span>
+        <span class="gallery__caption-meta">Bangalore, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 2 -->
+
+
+    <!-- ─── PHOTO 3 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="Residential"
+         data-full="images/BLR_Villa-2_ExC3 - Copy.png"
+         data-title="Bangalore villa"
+         data-meta="Bangalore, India · 2025">
+
+      <img
+        src="images/BLR_Villa-2_ExC3 - Copy.png"
+        width="600"
+        height="800"
+        alt="Urban architecture reflecting steel and glass"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Steel &amp; Glass</span>
+        <span class="gallery__caption-meta">New York, USA · 2024</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 3 -->
+
+
+    <!-- ─── PHOTO 4 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="Residential"
+         data-full="images/Atlanta house 1 ExC1.png"
+         data-title="Atlanta house"
+         data-meta="Atlanta · 2025">
+
+      <img
+        src="images/Atlanta house 1 ExC1.png"
+        width="600"
+        height="400"
+        alt="Sunlight filtering through a dense forest floor"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Atlanta house</span>
+        <span class="gallery__caption-meta">Atlanta · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 4 -->
+
+
+    <!-- ─── PHOTO 5 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="Residential"
+         data-full="images/Atlanta house 1 ExC2.png"
+         data-title="Atlanta house"
+         data-meta="Atlanta · 2025">
+
+      <img
+        src="images/Atlanta house 1 ExC2.png"
+        width="600"
+        height="900"
+        alt="A quiet Residential by a Sunday morning window"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Atlanta house</span>
+        <span class="gallery__caption-meta">Atlanta · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 5 -->
+
+
+    <!-- ─── PHOTO 6 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/EXPERIENCE CENTER -1.png"
+         data-title="Interiors experience center"
+         data-meta="Bangalore, India · 2023">
+
+      <img
+        src="images/EXPERIENCE CENTER -1.png"
+        width="600"
+        height="360"
+        alt="experience center Interiors"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Experience center</span>
+        <span class="gallery__caption-meta">Bangalore, India · 2023</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 6 -->
+
+
+    <!-- ─── PHOTO 7 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/EXPERIENCE CENTER -1.png"
+         data-title="Interiors experience center"
+         data-meta="Bangalore, India · 2023">
+
+      <img
+        src="images/BASEMENT OFFICE-1.png"
+        width="600"
+        height="360"
+        alt="experience center Interiors"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Experience center</span>
+        <span class="gallery__caption-meta">Bangalore, India · 2023</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 7 -->
+
+
+    <!-- ─── PHOTO 8 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="Residential"
+         data-full="images/BLR_Villa-1_ExC1.png"
+         data-title="Bangalore villa"
+         data-meta="Bengaluru, India · 2025">
+
+      <img
+        src="images/BLR_Villa-1_ExC1.png"
+        width="600"
+        height="900"
+        alt="Heavy rain falling on lush green leaves"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Bangalore villa</span>
+        <span class="gallery__caption-meta">Bengaluru, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 8 -->
+
+
+    <!-- ─── PHOTO 9 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="Residential"
+         data-full="images/BLR_Villa-1_ExC2.png"
+         data-title="Bangalore villa"
+         data-meta="Bengaluru, India · 2025">
+
+      <img
+        src="images/BLR_Villa-1_ExC2.png"
+        width="600"
+        height="750"
+        alt="A traditional weaver at a handloom"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Bangalore villa</span>
+        <span class="gallery__caption-meta">Bengaluru, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 9 -->
+
+
+    <!-- ─── PHOTO 10 ──────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="Residential"
+         data-full="images/BLR_Villa-1_ExC4.png"
+         data-title="Bangalore villa"
+         data-meta="Bengaluru, India · 2025">
+
+      <img
+        src="images/BLR_Villa-1_ExC4.png"
+        width="600"
+        height="750"
+        alt="A traditional weaver at a handloom"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Bangalore villa</span>
+        <span class="gallery__caption-meta">Bengaluru, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 10 -->
+
+
+    <!-- ─── PHOTO 11 ──────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/HYD CHEFS - InC (3) - Copy.png"
+         data-title="Hyderabad Chefs"
+         data-meta="Bangalore, India · 2024">
+
+      <img
+        src="images/HYD CHEFS - InC (3) - Copy.png"
+        width="600"
+        height="800"
+        alt="A single beam of light cutting through a dark pillar"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Hyderabad Chefs</span>
+        <span class="gallery__caption-meta">Bangalore, India · 2024</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 11 -->
+
+
+    <!-- ─── PHOTO 12 ──────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/HYD CHEFS - InC (1).png"
+         data-title="Hyderabad Chefs"
+         data-meta="Bangalore, India · 2024">
+
+      <img
+        src="images/HYD CHEFS - InC (1).png"
+        width="600"
+        height="800"
+        alt="A single beam of light cutting through a dark pillar"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Hyderabad Chefs</span>
+        <span class="gallery__caption-meta">Bangalore, India · 2024</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 12 -->
+
+
+    <!-- ─── PHOTO 13 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/HYD CHEFS - InC (2).png"
+         data-title="Hyderabad Chefs"
+         data-meta="Bangalore, India · 2024">
+
+      <img
+        src="images/HYD CHEFS - InC (2).png"
+        width="600"
+        height="800"
+        alt="A single beam of light cutting through a dark pillar"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Hyderabad Chefs</span>
+        <span class="gallery__caption-meta">Bangalore, India · 2024</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 13 -->
+
+
+    <!-- ─── PHOTO 14 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/HYD CHEFS - InC (4).png"
+         data-title="Hyderabad Chefs"
+         data-meta="Bangalore, India · 2024">
+
+      <img
+        src="images/HYD CHEFS - InC (4).png"
+        width="600"
+        height="800"
+        alt="A single beam of light cutting through a dark pillar"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Hyderabad Chefs</span>
+        <span class="gallery__caption-meta">Bangalore, India · 2024</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 14 -->
+
+
+    <!-- ─── PHOTO 15 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="Residential"
+         data-full="images/San Jose house 1 - ExC1.png"
+         data-title="San Jose House"
+         data-meta="San Jose, USA · 2026">
+
+      <img
+        src="images/San Jose house 1 - ExC1.png"
+        width="600"
+        height="360"
+        alt="Salt flats stretching to the horizon at dusk"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">San Jose House</span>
+        <span class="gallery__caption-meta">San Jose, USA · 2026</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 15 -->
+
+
+    <!-- ─── PHOTO 16 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="Residential"
+         data-full="images/San Jose house 1 - ExC2.png"
+         data-title="San Jose House"
+         data-meta="San Jose, USA · 2026">
+
+      <img
+        src="images/San Jose house 1 - ExC2.png"
+        width="600"
+        height="360"
+        alt="Salt flats stretching to the horizon at dusk"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">San Jose House</span>
+        <span class="gallery__caption-meta">San Jose, USA · 2026</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 16 -->
+
+
+     <!-- ─── PHOTO 17 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/zen garden day.png"
+         data-title="Delhi convention center"
+         data-meta="New delhi, India · 2024">
+
+      <img
+        src="images/zen garden day.png"
+        width="600"
+        height="360"
+        alt="Delhi convention center driveway landscape"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Delhi convention center</span>
+        <span class="gallery__caption-meta">New delhi, India · 2024</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 17 -->
+
+
+    <!-- ─── PHOTO 17 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/zen garden.png"
+         data-title="Delhi convention center"
+         data-meta="New delhi, India · 2024">
+
+      <img
+        src="images/zen garden.png"
+        width="600"
+        height="360"
+        alt="Delhi convention center driveway landscape"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Delhi convention center</span>
+        <span class="gallery__caption-meta">New delhi, India · 2024</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 17 -->
+
+
+    <!-- ─── PHOTO 17 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/Nagpur centre (1).png"
+         data-title="Nagpur convention center"
+         data-meta="Nagpur, India · 2025">
+
+      <img
+        src="images/Nagpur centre (1).png"
+        width="600"
+        height="360"
+        alt="Delhi convention center driveway landscape"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Nagpur convention center</span>
+        <span class="gallery__caption-meta">Nagpur, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 17 -->
+
+
+
+    <!-- ─── PHOTO 18 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/Nagpur centre (2).png"
+         data-title="Nagpur convention center"
+         data-meta="Nagpur, India · 2025">
+
+      <img
+        src="images/Nagpur centre (2).png"
+        width="600"
+        height="360"
+        alt="Delhi convention center driveway landscape"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Nagpur convention center</span>
+        <span class="gallery__caption-meta">Nagpur, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 18 -->
+
+
+    <!-- ─── PHOTO 19 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/Nagpur centre (3).png"
+         data-title="Nagpur convention center"
+         data-meta="Nagpur, India · 2025">
+
+      <img
+        src="images/Nagpur centre (3).png"
+        width="600"
+        height="360"
+        alt="Delhi convention center driveway landscape"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Nagpur convention center</span>
+        <span class="gallery__caption-meta">Nagpur, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 19 -->
+
+
+
+    <!-- ─── PHOTO 20 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/Nagpur centre (4).png"
+         data-title="Nagpur convention center"
+         data-meta="Nagpur, India · 2025">
+
+      <img
+        src="images/Nagpur centre (4).png"
+        width="600"
+        height="360"
+        alt="Delhi convention center driveway landscape"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Nagpur convention center</span>
+        <span class="gallery__caption-meta">Nagpur, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 20 -->
+
+
+
+    <!-- ─── PHOTO 20 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/Bahrain (1).png"
+         data-title="Pinnacle towers mised use competition"
+         data-meta="Bahrain · 2025">
+
+      <img
+        src="images/Bahrain (1).png"
+        width="600"
+        height="360"
+        alt="Delhi convention center driveway landscape"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Nagpur convention center</span>
+        <span class="gallery__caption-meta">Nagpur, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 20 -->
+
+
+
+    <!-- ─── PHOTO 20 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="commercial"
+         data-full="images/Bahrain (2).png"
+         data-title="Pinnacle towers mised use competition"
+         data-meta="Bahrain · 2025">
+
+      <img
+        src="images/Bahrain (2).png"
+        width="600"
+        height="360"
+        alt="Delhi convention center driveway landscape"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Nagpur convention center</span>
+        <span class="gallery__caption-meta">Nagpur, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 20 -->
+
+
+    <!-- ─── PHOTO 20 ───────────────────────────────────────────── -->
+    <div class="gallery__item" data-category="3D"
+         data-full="images/mehfooz residence 3D.png"
+         data-title="Mehfuz manzil"
+         data-meta="Bangalore · 2025">
+
+      <img
+        src="images/mehfooz residence 3D.png"
+        width="600"
+        height="360"
+        alt="Delhi convention center driveway landscape"
+        class="gallery__image"
+        loading="lazy"
+      />
+
+      <div class="gallery__caption">
+        <span class="gallery__caption-title">Mehfooz manzil</span>
+        <span class="gallery__caption-meta">Bangalore, India · 2025</span>
+      </div>
+
+      <div class="gallery__expand-icon" aria-hidden="true">
+        <svg viewBox="0 0 12 12" stroke-width="1.5"><path d="M1 4V1h3M8 1h3v3M11 8v3H8M4 11H1V8"/></svg>
+      </div>
+
+    </div><!-- /PHOTO 20 -->
+
+    
+
+  
+
+    
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         ↑  PASTE NEW PHOTOS ABOVE THIS LINE
+         Copy any .gallery__item block above and change:
+           src="..."              → your thumbnail image path
+           data-full="..."        → your high-res image path
+           data-title="..."       → your photo title
+           data-meta="..."        → location / year
+           data-category="..."    → portfolio category (for filter)
+         ═══════════════════════════════════════════════════════════ -->
+
+
+  </main><!-- /GALLERY -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       LIGHTBOX  —  "Lightroom Mode"
+       This element is controlled by JavaScript below.
+       You do not need to edit this HTML.
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="lightbox" id="js-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+
+    <div class="lightbox__bar">
+      <span class="lightbox__counter" id="js-lb-counter" aria-live="polite"></span>
+      <button class="lightbox__close" id="js-lb-close" aria-label="Close photo viewer">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="lightbox__stage">
+
+      <button class="lightbox__nav lightbox__nav--prev" id="js-lb-prev" aria-label="Previous photo">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+
+      <!-- ↓ The <img> src is swapped by JS — do not edit src here -->
+      <img src="" alt="" class="lightbox__image" id="js-lb-image" />
+
+      <button class="lightbox__nav lightbox__nav--next" id="js-lb-next" aria-label="Next photo">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <div class="lightbox__caption">
+      <p class="lightbox__caption-title" id="js-lb-title"></p>
+      <p class="lightbox__caption-meta"  id="js-lb-meta"></p>
+    </div>
+
+  </div><!-- /LIGHTBOX -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+
+    <div>
+      <!-- ↓ EDIT: Replace with your name / studio -->
+      <p class="footer__brand">RENDERINGZ</p>
+      <p class="footer__copyright">&copy; 2024 RENDERINGZ.in. All rights reserved.</p>
+      
+       
+      
+    </div>
+
+    <!-- ↓ EDIT: Update links to match your site pages -->
+    <ul class="footer__nav">
+      <li><a href="index.html">Works</a></li>
+      <li><a href="about.html">About</a></li>d
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       JAVASCRIPT  —  Lightroom Mode + Filter
+       You do not need to edit this block.
+       ═══════════════════════════════════════════════════════════════ -->
+  <script src="tooplate-exhibit-script.js"></script>
+
+</body>
+</html>
