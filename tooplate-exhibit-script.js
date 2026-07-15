@@ -280,7 +280,7 @@ Free HTML CSS Template
            ───────────────────────────────────────────────────────── */
 
         /* Simulate a successful send for the template demo */
-        submitBtn.disabled     = true;
+        submitBtn.disabled     = false;
         submitBtn.textContent  = 'Sending…';
         successMsg.style.display = 'none';
         errorMsg.style.display   = 'none';
